@@ -58,9 +58,9 @@ const HomePage = () => {
           </div>
           <Campains />
           <Achievements />
-          <div class="md:max-w-[1580px] m-auto grid md:grid-cols-2 gap-8 max-w-[600px] items-center px-4 md:p-20">
+          <div class="md:max-w-[1580px] m-auto grid md:grid-cols-2 gap-8 max-w-[600px] items-center px-4 md:p-20 bg-[#E9F8F3B2]">
             <img src={Famine} class="w-[650px] mx-auto" alt='Loading' />
-            <div>
+            <div className=''>
               <h1 class="py-2  text-4xl font-extrabold">Be a part of <span class="text-[#20B486]">our Campaigns!</span>
               </h1>
               <p class="py-2 text-lg text-gray-600">Start by registering for free and help us saving lives!</p>
