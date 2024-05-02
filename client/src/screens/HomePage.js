@@ -49,7 +49,7 @@ const HomePage = () => {
             <p className='text-center  text-[#536E96] text-xl'>Where innovation meets safety - explore our cutting-edge disaster management technologies.</p>
             <div className='flex justify-center py-8 md:gap-8 '>
               <div className='grid md:grid-cols-4 grid-cols-2 gap-2'>
-                <img src={companyLogo1} alt='Loading' className='w-20 h-20 mx-8' />
+                <img src={companyLogo1} style={{width:'10rem'}} alt='Loading' className='w-20 h-20 mx-8' />
                 <img src={companyLogo2} alt='Loading' className='w-20 h-20 mx-8' />
                 <img src={companyLogo3} alt='Loading' className='w-20 h-20 mx-8' />
                 <img src={companyLogo4} alt='Loading' className='w-20 h-20 mx-8' />
