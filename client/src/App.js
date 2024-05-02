@@ -7,6 +7,7 @@ import AdminLogin from './screens/AdminLogin';
 import UserPage from './screens/UserPage';
 import AdminSignUp from './screens/AdminSignUp';
 import AdminPage from './screens/AdminPage';
+import VolunteerPage from './screens/VolunteerPage';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/adminLogin" element={<AdminLogin />} />
         <Route path="/adminSignUp" element={<AdminSignUp />} />
         <Route path="/adminDashboard" element={<AdminPage />} />
+        <Route path='/volunteerRegistration' element={<VolunteerPage/>}/>
         <Route path="*" element={<div>The Requested URL is Not Found</div>} />
       </Routes>
     </>

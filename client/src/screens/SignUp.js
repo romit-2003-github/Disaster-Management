@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { Form, Input, Button, message } from 'antd';
+import Navbar from '../components/layout/Navbar';
 import { FacebookOutlined, GoogleOutlined, TwitterOutlined, UserOutlined, UserAddOutlined } from '@ant-design/icons'
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Spinner from '../components/Spinner';
+import Footer from '../components/layout/Footer';
 
 const SignUp = () => {
 
@@ -32,17 +34,18 @@ const SignUp = () => {
 
   return (
     <>
-      <div className='LoginPage'>
+      <Navbar/>
+      <div className='LoginPage bg-[#FFFF] m-40'>
         {/* <div className="Logo">
           <img src={logo} alt="loading" />
         </div> */}
-        {loading && <Spinner/>}
+        {loading && <Spinner />}
 
         <div className="LoginForm">
           <div className="LoginText">
-            <h1 style={{ fontSize: "3rem", color: "whitesmoke" }} className='mt-3'><b>REGISTRATION</b></h1>
+            <h1 className='m-3 text-5xl font-bold text-[#20B486]'>USER REGISTRATION</h1>
           </div>
-          <div className="loginButtons">
+          <div className="loginButtons my-4">
             <button className='btn authB px-4' style={{ backgroundColor: "blue" }}>
               <a style={{ textDecoration: 'none', color: "white" }} href='/'><FacebookOutlined /> Facebook</a>
             </button>
@@ -56,46 +59,46 @@ const SignUp = () => {
 
           <Form layout='vertical'
             name="basic"
-            style={{ padding: '20px', width: '100%' }}
-            className='RegisterForm'
+            className='p-5 items-center flex flex-col gap-4 bg-[#20B486] rounded-md w-100'
             onFinish={submitHandler}
           >
-            <div className="form1">
+            <div className="form1 w-100">
               <Form.Item label='Name' name='name' rules={[{ required: true, message: "Please enter your Name" }]}>
-                <Input type='text' style={{ backgroundColor: 'gray', color: "white", opacity: "0.5", borderRadius: "20px", border: "2px solid white" }} />
+                <Input type='text' />
               </Form.Item>
 
               <Form.Item label='Email' name='email' rules={[{ required: true, message: "Please enter Email" }]}>
-                <Input type='email' style={{ backgroundColor: 'gray', color: "white", opacity: "0.5", borderRadius: "20px", border: "2px solid white" }} />
+                <Input type='email' />
               </Form.Item>
 
               <Form.Item label='Password' name='password' rules={[{ required: true, message: "Please enter Password" }]}>
-                <Input type='password' style={{ backgroundColor: "gray", color: "white", opacity: "0.5", borderRadius: "20px", border: "2px solid white" }} />
+                <Input type='password' />
               </Form.Item>
             </div>
 
-            <div className="form2">
+            <div className="form2 w-100">
               <Form.Item label='Phone No.' name='phoneno' rules={[{ required: true, message: "Please enter your Phone No." }]}>
-                <Input type='text' style={{ backgroundColor: "gray", color: "white", opacity: "0.5", borderRadius: "20px", border: "2px solid white" }} />
+                <Input type='text' />
               </Form.Item>
 
               <Form.Item label='Address' name='address' rules={[{ required: true, message: "Please enter your Address" }]}>
-                <Input type='text' style={{ backgroundColor: "gray", color: "white", opacity: "0.5", borderRadius: "20px", border: "2px solid white" }} />
+                <Input type='text' />
               </Form.Item>
 
 
-              <button className='btn btn-danger my-4' htmltype='submit' style={{ width: "100%", borderRadius: "20px", backgroundColor: "red", color: "white", border: "none" }}>Sign In</button>
+              <button className='btn btn-danger my-4 w-100' htmltype='submit' >Sign In</button>
 
 
             </div>
 
+            <div className="adminLogin">
+              <Button type='primary' className='bg-[#FFF] text-dark'><Link to='/Login'><UserOutlined />Login as User</Link></Button>
+              <Button type='primary' className='mx-2 bg-[#FFF] text-dark'><Link to='/adminSignUp'><UserAddOutlined />Register as Admin</Link></Button>
+            </div>
           </Form>
-          <div className="adminLogin">
-            <Button type='primary'><Link to='/Login'><UserOutlined />Login as User</Link></Button>
-            <Button type='primary' className='mx-2'><Link to='/adminSignUp'><UserAddOutlined />Register as Admin</Link></Button>
-          </div>
         </div>
       </div>
+      <Footer/>
     </>
   )
 }
